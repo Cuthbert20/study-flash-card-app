@@ -6,6 +6,8 @@ const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 const session = require('express-session')
 const cntrl = require('./controller')
 
+
+//top level middleware
 app.use(express.json());
 app.use(session({
     secret: SESSION_SECRET,
@@ -16,7 +18,10 @@ app.use(session({
     }
 }))
 
+//endpoints
+
+
 massive(CONNECTION_STRING).then(db => {
-    app.set("db".db);
+    app.set("db", db);
     app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT}, is now up and listening`))
 })
