@@ -19,7 +19,7 @@ app.use(session({
 }))
 
 //endpoints
-// app.post('/auth/register', ctrl.register)
+app.post('/auth/register', ctrl.register);
 
 
 massive(CONNECTION_STRING).then(db => {
