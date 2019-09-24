@@ -4,7 +4,7 @@ import './Login.scss'
 
 export default class Login extends Component {
     state = {
-
+        
     }
     render() {
         return(
@@ -13,6 +13,7 @@ export default class Login extends Component {
                 <input placeholder='username' type="text"/>
                 <input placeholder='password' type="text"/>
                 <button>Login</button>
+                <button>Register</button>
             </div>
         )
     }

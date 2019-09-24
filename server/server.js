@@ -4,7 +4,7 @@ const massive = require('massive')
 require("dotenv").config();
 const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 const session = require('express-session')
-const cntrl = require('./controller')
+const ctrl = require('./controller')
 
 
 //top level middleware
@@ -19,6 +19,7 @@ app.use(session({
 }))
 
 //endpoints
+// app.post('/auth/register', ctrl.register)
 
 
 massive(CONNECTION_STRING).then(db => {

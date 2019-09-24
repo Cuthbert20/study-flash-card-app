@@ -5,9 +5,9 @@ import Login from '../Login/Login'
 export default class Landing extends Component {
     render() {
         return(
-            <div>
+            <main>
                 <Login />
-            </div>
+            </main>
         )
     }
 }
