@@ -20,8 +20,8 @@ module.exports = {
             const newUser = await db.create_user_profile({
                 username, user_img, password, user_email
             });
-            console.log(newUser)
             req.session.user = newUser[0]
+            // console.log(req.session.user)
             delete newUser[0].password;
             res.status(200).send({message: "logged in", user: req.session.user, loggedIn: true});
         } catch(err) {
