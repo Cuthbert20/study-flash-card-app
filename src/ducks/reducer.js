@@ -2,6 +2,7 @@
 
 const initialState = {
     user_id: null,
+    user_email: "",
     username: "",
     user_img: "",
     user_password: ""
