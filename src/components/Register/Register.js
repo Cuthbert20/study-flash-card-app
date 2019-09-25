@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Register.scss'
 import { connect } from 'react-redux'
 import { setUser } from '../../ducks/reducer'
+import axios from 'axios'
 
 export class Register extends Component{
     state ={
@@ -13,11 +14,13 @@ export class Register extends Component{
     handleBack = () => {
         this.props.history.push('/')
     }
-    handleContinue = () => {
+    handleContinue = async () => {
         //need to set state and use this.props.setUser and push with history.
         const { profilePic, username, email, password } = this.state 
+        let res = await axios.post('/auth/register', {user_email: email, username, user_img: profilePic, user_password: password });
+        console.log(res.data);
         this.props.setUser({user_email: email, user_img: profilePic, username, user_password: password });
-        this.props.history.push('/home')
+        this.props.history.push('/home');
     }
     handleChange = (e, key) => {
         this.setState({
@@ -25,7 +28,7 @@ export class Register extends Component{
         })
     }
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         const { email, username, profilePic, password } = this.state
         return(
             <div>
