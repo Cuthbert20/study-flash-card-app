@@ -17,7 +17,7 @@ export class Register extends Component{
     handleContinue = async () => {
         //need to set state and use this.props.setUser and push with history.
         const { profilePic, username, email, password } = this.state 
-        let res = await axios.post('/auth/register', {user_email: email, username, user_img: profilePic, user_password: password });
+        let res = await axios.post('/auth/register', {user_email: email, username, user_img: profilePic, hash: password });
         console.log(res.data);
         this.props.setUser({user_email: email, user_img: profilePic, username, user_password: password });
         this.props.history.push('/home');

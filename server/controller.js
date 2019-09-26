@@ -10,7 +10,7 @@ module.exports = {
                 hash,
                 user_email
             } = req.body 
-            // console.log(req.body)
+            console.log(req.body)
             const user = await db.find_email([user_email]);
             if(user.length > 0){
                 return res.status(400).send({message: "Email in Use"})
