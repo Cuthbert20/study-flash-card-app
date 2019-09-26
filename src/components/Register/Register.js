@@ -19,6 +19,7 @@ export class Register extends Component{
         const { profilePic, username, email, password } = this.state 
         let res = await axios.post('/auth/register', {user_email: email, username, user_img: profilePic, hash: password });
         console.log(res.data);
+        //using reducer to set redux state.
         this.props.setUser({user_email: email, user_img: profilePic, username, user_password: password });
         this.props.history.push('/home');
     }

@@ -7,6 +7,7 @@ export class Home extends Component {
         return(
             <div>
                 <h1>Your Home Component</h1>
+                <button>Log Out</button>
             </div>
         )
     }
