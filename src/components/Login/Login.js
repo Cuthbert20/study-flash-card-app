@@ -43,13 +43,13 @@ export class Login extends Component {
         const { username, password} = this.state
         console.log(this.props)
         return(
-            <div>
-                <h1>Login</h1>
+            <main className='login-main'>
+                <h1 id='login-title'>Login</h1>
                 <input onChange={(e) => this.handleChange(e, "username")} value={username} placeholder='username' type="text"/>
                 <input onChange={(e) => this.handleChange(e, "password")} value={password} placeholder='password' type="text"/>
                 <button onClick={this.handleLogin}>Login</button>
                 <button onClick={this.handleRegister}>Register</button>
-            </div>
+            </main>
         )
     }
 }

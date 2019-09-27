@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* change box model so the borders and padding are no long added to total with and height */
+    box-sizing: border-box;
+}
+
+.login-main {
+    
+}
+
+#login-title {
+    color: red;
+}

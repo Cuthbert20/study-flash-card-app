@@ -29,6 +29,7 @@ module.exports = {
             res.status(500).send({message: "Failed to Register"})
         }
     },
+
     login: async (req, res) => {
         try{
             const db = req.app.get("db")
@@ -40,6 +41,7 @@ module.exports = {
         if(result){
             delete user[0].password;
             req.session.user = user[0]
+            console.log(req.session)
             return res.status(200).send({
                 message: "Logged In",
                 user: req.session.user,
@@ -49,6 +51,11 @@ module.exports = {
     } catch(err){
         res.status(500).send({message: "failed to login"})
     }
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        res.status(200).send({message: "logged out"})
     }
 
 }

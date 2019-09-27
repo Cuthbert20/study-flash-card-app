@@ -10,6 +10,7 @@ const initialState = {
 
 //--ACTION CONSTANTS--
 const SET_USER = "SET_USER";
+const LOGOUT_USER = "LOGOUT_USER";
 
 //--ACTION BUILDERS--
 export function setUser(user) {
@@ -19,12 +20,20 @@ export function setUser(user) {
     }
 }
 
+export function logoutUser(){
+    return {
+        type: LOGOUT_USER
+    }
+}
+
 //--REDUCER--
 export default (state = initialState, action) => {
     const { type, payload } = action;
     switch(type){
+        case LOGOUT_USER: 
+            return initialState;
         case SET_USER:
-            return {...state, ...payload}
+            return {...state, ...payload};
         default:
             return state
     }

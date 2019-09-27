@@ -5,7 +5,7 @@ import Login from '../Login/Login'
 export default class Landing extends Component {
     render() {
         return(
-            <main>
+            <main className='landing-main'>
                 <Login />
             </main>
         )
