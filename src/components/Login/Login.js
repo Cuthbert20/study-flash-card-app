@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Login.scss'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { setUser } from '../../ducks/reducer'
 
 export class Login extends Component {
     state = {
@@ -19,20 +20,38 @@ export class Login extends Component {
             [key]: e.target.value
         })
     }
+    handleLogin = async () => {
+        const { username, password } = this.state 
+        let result = await axios.post('/auth/login', { username, password })
+        .then(res => {
+            console.log(this.props)
+            const { username, user_img, user_email, user_id } = res.data.user
+            this.props.setUser({
+                user_email,
+                username,
+                user_img,
+                user_id
+            })
+            this.props.history.push('/home')
+        })
+        .catch((err) => {
+            console.log(err, "login error")
+        })
+    }
     //handleLogin method will also use setUser Reducer set redux state.
     render() {
         const { username, password} = this.state
-        console.log(this.state)
+        console.log(this.props)
         return(
             <div>
                 <h1>Login</h1>
                 <input onChange={(e) => this.handleChange(e, "username")} value={username} placeholder='username' type="text"/>
                 <input onChange={(e) => this.handleChange(e, "password")} value={password} placeholder='password' type="text"/>
-                <button>Login</button>
+                <button onClick={this.handleLogin}>Login</button>
                 <button onClick={this.handleRegister}>Register</button>
             </div>
         )
     }
 }
 
-export default connect(null,{})(withRouter(Login));
+export default connect(null,{setUser})(withRouter(Login));
