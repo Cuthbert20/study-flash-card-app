@@ -22,6 +22,7 @@ app.use(session({
 app.post('/auth/register', ctrl.register);
 app.post('/auth/login', ctrl.login);
 app.post('/auth/logout', ctrl.logout);
+app.get('/auth/session', ctrl.getSession);
 
 
 massive(CONNECTION_STRING).then(db => {

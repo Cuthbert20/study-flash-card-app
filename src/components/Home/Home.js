@@ -12,13 +12,20 @@ export class Home extends Component {
     }
     render(){
         console.log(this.props)
+        const { user_id, user_img, username } = this.props
         return(
             <div>
-                <h1>Your Home Component</h1>
+                <h1>{username}</h1>
                 <button onClick={this.handleLogout} >Log Out</button>
             </div>
         )
     }
 }
+function mapStateToProps(reduxState){
+    const { user_id, user_img, username } = reduxState
+    return {
+        user_id, user_img, username
+    }
+}
 
-export default connect(null,{ logoutUser })(Home)
+export default connect(mapStateToProps,{ logoutUser })(Home)

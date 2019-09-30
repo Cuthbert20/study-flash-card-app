@@ -22,9 +22,11 @@ export class Login extends Component {
     }
     handleLogin = async () => {
         const { username, password } = this.state 
+        //result is user on session
         let result = await axios.post('/auth/login', { username, password })
         .then(res => {
-            console.log(this.props)
+            // console.log(this.props)
+            
             const { username, user_img, user_email, user_id } = res.data.user
             this.props.setUser({
                 user_email,
