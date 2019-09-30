@@ -14,8 +14,9 @@ export class Home extends Component {
         console.log(this.props)
         const { user_id, user_img, username } = this.props
         return(
-            <div>
+            <div className='profile-container'>
                 <h1>{username}</h1>
+                <img src={user_img} alt="" className="profile-img"/>
                 <button onClick={this.handleLogout} >Log Out</button>
             </div>
         )
