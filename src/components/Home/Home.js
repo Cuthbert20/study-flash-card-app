@@ -17,7 +17,7 @@ export class Home extends Component {
             <div className='profile-container'>
                 <h1>{username}</h1>
                 <img src={user_img} alt="" className="profile-img"/>
-                <button onClick={this.handleLogout} >Log Out</button>
+                <button className="out-btn" onClick={this.handleLogout} >Log Out</button>
             </div>
         )
     }

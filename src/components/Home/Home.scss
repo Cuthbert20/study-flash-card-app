@@ -1,7 +1,14 @@
 .profile-container {
-    
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile-img {
-    
+    max-width: 200px;
+    border-radius: 5px;
+}
+
+.out-btn {
+    max-width: 100px;
 }
