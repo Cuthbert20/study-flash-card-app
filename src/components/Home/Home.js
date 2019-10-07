@@ -25,7 +25,13 @@ export class Home extends Component {
   render() {
     const { user_id, user_img, username } = this.props;
     const { topics } = this.state;
-    console.log(topics);
+    let allTopics = topics.map((elm, index) => {
+      return (
+        <option key={elm.topic_id} value={elm.topic_name}>
+          {elm.topic_name}
+        </option>
+      );
+    });
     return (
       <div className="profile-container">
         <h1>{username}</h1>
@@ -33,9 +39,11 @@ export class Home extends Component {
         <button className="out-btn" onClick={this.handleLogout}>
           Log Out
         </button>
-        <select name="" id="">
-          <option value=""></option>
-        </select>
+        <main className="select-topic-main">
+          <select name="topics" id="">
+            {allTopics}
+          </select>
+        </main>
         {/* create deck of cards using react-spring, each card displaying a topic
                 if swipe right it opens the topic, then the topic component will render based on
                 which card is swiped right topic_id. Then a grid of cards where the question is displayed
