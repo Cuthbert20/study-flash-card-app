@@ -44,7 +44,7 @@ export class Login extends Component {
   //handleLogin method will also use setUser Reducer set redux state.
   render() {
     const { username, password } = this.state;
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <main className="login-main">
         <div className="login-header">

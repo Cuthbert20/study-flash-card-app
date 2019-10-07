@@ -5,14 +5,27 @@ import axios from "axios";
 import { logoutUser } from "../../ducks/reducer";
 
 export class Home extends Component {
+  state = {
+    topics: []
+  };
+  componentDidMount() {
+    this.allTopics();
+  }
   handleLogout = async () => {
     await axios.post("/auth/logout");
     this.props.logoutUser();
     this.props.history.push("/");
   };
+  allTopics = async () => {
+    const result = await axios.get("/api/card/topics");
+    this.setState({
+      topics: result.data
+    });
+  };
   render() {
-    console.log(this.props);
     const { user_id, user_img, username } = this.props;
+    const { topics } = this.state;
+    console.log(topics);
     return (
       <div className="profile-container">
         <h1>{username}</h1>
@@ -20,6 +33,9 @@ export class Home extends Component {
         <button className="out-btn" onClick={this.handleLogout}>
           Log Out
         </button>
+        <select name="" id="">
+          <option value=""></option>
+        </select>
         {/* create deck of cards using react-spring, each card displaying a topic
                 if swipe right it opens the topic, then the topic component will render based on
                 which card is swiped right topic_id. Then a grid of cards where the question is displayed
