@@ -1,14 +1,23 @@
 * {
-    margin: 0;
-    padding: 0;
-    /* change box model so the borders and padding are no long added to total with and height */
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* change box model so the borders and padding are no long added to total with and height */
+  box-sizing: border-box;
 }
 
 .login-main {
-    
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-header {
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
 }
 
 #login-title {
-    color: red;
+  color: red;
 }
