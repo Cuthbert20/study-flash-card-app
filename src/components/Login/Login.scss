@@ -3,6 +3,7 @@
   padding: 0;
   /* change box model so the borders and padding are no long added to total with and height */
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 .login-main {
@@ -14,7 +15,7 @@
 }
 .login-header {
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.2rem;
 }
 
