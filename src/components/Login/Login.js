@@ -51,26 +51,26 @@ export class Login extends Component {
           <div className="login-header">
             <h1 id="login-title">Login</h1>
           </div>
-          <div className="input-box">
-            <input
-              onChange={e => this.handleChange(e, "username")}
-              value={username}
-              placeholder="username"
-              type="text"
-            />
-            <label htmlFor="">Username</label>
-          </div>
-          <div className="input-box">
-            <input
-              onChange={e => this.handleChange(e, "password")}
-              value={password}
-              placeholder="password"
-              type="text"
-            />
-            <label htmlFor="">Password</label>
-          </div>
-          <button onClick={this.handleLogin}>Submit</button>
-          <button onClick={this.handleRegister}>Register</button>
+          <form action="">
+            <div className="input-box">
+              <input
+                onChange={e => this.handleChange(e, "username")}
+                value={username}
+                type="text"
+              />
+              <label htmlFor="">Username</label>
+            </div>
+            <div className="input-box">
+              <input
+                onChange={e => this.handleChange(e, "password")}
+                value={password}
+                type="text"
+              />
+              <label htmlFor="">Password</label>
+            </div>
+            <button onClick={this.handleLogin}>Submit</button>
+            <button onClick={this.handleRegister}>Register</button>
+          </form>
         </main>
       </div>
     );
