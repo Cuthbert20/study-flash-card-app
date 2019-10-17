@@ -88,9 +88,15 @@ body {
 //   }
 // }
 //NOT WORKING HOW IT SHOULD SHOULD ONLY MOVE -20PX TO TO AND CHANGE COLOR ON :FOCUS AND :VALID
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-  color: rgba(80, 120, 200, 0.5);
+// .input-box input:focus ~ label,
+// .input-box input:valid ~ label {
+//   color: rgba(80, 120, 200, 0.5);
+//   font-size: 2rem;
+//   top: -20px;
+//   transition: 0.5s;
+// }
+.input-box input:focus ~ label {
+  color: rgba(245, 76, 46, 0.856);
   font-size: 2rem;
   top: -20px;
   transition: 0.5s;
