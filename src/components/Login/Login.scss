@@ -5,17 +5,40 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
-
-.login-main {
+body {
   height: 100vh;
-  width: 100vw;
-  padding: 50px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-image: url("../../photos/sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  // @media screen and (max-width: 1200px) {
+  //   background-size: 100%, 100%;
+  // }
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  //when ever setting position absolute need to set top and left properties
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.box {
+  background: rgba(0, 0, 0, 0.8);
+  width: 500px;
+  height: 380px;
+  border-radius: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.8);
+  position: relative;
+  //using transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 .login-header {
   margin-bottom: 10px;
@@ -24,5 +47,5 @@
 }
 
 #login-title {
-  color: #333;
+  color: rgb(219, 203, 203);
 }

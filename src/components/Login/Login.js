@@ -46,27 +46,33 @@ export class Login extends Component {
     const { username, password } = this.state;
     // console.log(this.props);
     return (
-      <main className="login-main">
-        <div className="login-header">
-          <h1 id="login-title">Login</h1>
-        </div>
-        <div className="login-body">
-          <input
-            onChange={e => this.handleChange(e, "username")}
-            value={username}
-            placeholder="username"
-            type="text"
-          />
-          <input
-            onChange={e => this.handleChange(e, "password")}
-            value={password}
-            placeholder="password"
-            type="text"
-          />
-          <button onClick={this.handleLogin}>Login</button>
+      <div className="box-container">
+        <main className="box">
+          <div className="login-header">
+            <h1 id="login-title">Login</h1>
+          </div>
+          <div className="input-box">
+            <input
+              onChange={e => this.handleChange(e, "username")}
+              value={username}
+              placeholder="username"
+              type="text"
+            />
+            <label htmlFor="">Username</label>
+          </div>
+          <div className="input-box">
+            <input
+              onChange={e => this.handleChange(e, "password")}
+              value={password}
+              placeholder="password"
+              type="text"
+            />
+            <label htmlFor="">Password</label>
+          </div>
+          <button onClick={this.handleLogin}>Submit</button>
           <button onClick={this.handleRegister}>Register</button>
-        </div>
-      </main>
+        </main>
+      </div>
     );
   }
 }
