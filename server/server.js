@@ -29,6 +29,6 @@ app.get("/api/card/topics", ctrl.getTopics);
 massive(CONNECTION_STRING).then(db => {
   app.set("db", db);
   app.listen(SERVER_PORT, () =>
-    console.log(`${SERVER_PORT}, is now up and listening`)
+    console.log(`${SERVER_PORT}, is now up and listening dad`)
   );
 });

@@ -51,7 +51,7 @@ export class Login extends Component {
           <div className="login-header">
             <h1 id="login-title">Login</h1>
           </div>
-          <form action="">
+          <form>
             <div className="input-box">
               <input
                 onChange={e => this.handleChange(e, "username")}
@@ -68,8 +68,12 @@ export class Login extends Component {
               />
               <label htmlFor="">Password</label>
             </div>
-            <button onClick={this.handleLogin}>Submit</button>
-            <button onClick={this.handleRegister}>Register</button>
+            <button className="cred-btn" onClick={this.handleLogin}>
+              Submit
+            </button>
+            <button className="cred-btn" onClick={this.handleRegister}>
+              Register
+            </button>
           </form>
         </main>
       </div>

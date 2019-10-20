@@ -72,37 +72,44 @@ body {
     padding: 10px 0;
     cursor: pointer;
     transition: 0.5s;
-    // &:hover {
-    //   color: pink;
-    //   top: -20px;
-    //   transition: 0.5s;
-    // }
   }
 }
-// .input-box input ~ label {
-//   &:focus,
-//   &:valid {
-//     top: -20px;
-//     transition: 0.5s;
-//     color: pink;
-//   }
-// }
-//NOT WORKING HOW IT SHOULD SHOULD ONLY MOVE -20PX TO TO AND CHANGE COLOR ON :FOCUS AND :VALID
-// .input-box input:focus ~ label,
-// .input-box input:valid ~ label {
-//   color: rgba(80, 120, 200, 0.5);
-//   font-size: 2rem;
-//   top: -20px;
-//   transition: 0.5s;
-// }
+
 .input-box input:focus ~ label {
-  color: rgba(245, 76, 46, 0.856);
+  color: rgba(46, 245, 89, 0.856);
   font-size: 2rem;
-  top: -20px;
+  top: -25px;
   transition: 0.5s;
 }
 
 #login-title {
   color: rgb(219, 203, 203);
   font-size: 3rem;
+}
+
+.cred-btn {
+  font-size: 1.8rem;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  border: 2px solid rgba(46, 245, 89, 0.856);
+  border-radius: 5px;
+  margin: 0 5px;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+
+  &:hover {
+    background-color: rgba(46, 245, 89, 0.856);
+    padding: 10px 20px;
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+  }
+
+  &:active {
+    background: transparent;
+    transition: 0.1s;
+  }
 }
