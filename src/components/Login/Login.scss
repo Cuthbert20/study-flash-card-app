@@ -32,7 +32,7 @@ body {
 .box {
   background: rgba(0, 0, 0, 0.8);
   width: 50rem;
-  height: 38rem;
+  height: 42rem;
   border-radius: 5px;
   padding: 3rem;
   box-sizing: border-box;
@@ -103,7 +103,7 @@ body {
 
   &:hover {
     background-color: rgba(46, 245, 89, 0.856);
-    padding: 10px 20px;
+    // padding: 10px 20px;
     transition: 0.5s;
     transition-timing-function: ease-in;
   }

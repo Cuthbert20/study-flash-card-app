@@ -56,27 +56,37 @@ export class Register extends Component {
               />
               <label htmlFor="">Email</label>
             </div>
+            <div className="input-box">
+              <input
+                onChange={e => this.handleChange(e, "username")}
+                value={username}
+                type="text"
+              />
+              <label htmlFor="">Username</label>
+            </div>
+            <div className="input-box">
+              <input
+                onChange={e => this.handleChange(e, "profilePic")}
+                value={profilePic}
+                type="text"
+              />
+              <label htmlFor="">Profile Image</label>
+            </div>
+            <div className="input-box">
+              <input
+                onChange={e => this.handleChange(e, "password")}
+                value={password}
+                type="text"
+              />
+              <label htmlFor="">Password</label>
+            </div>
+            <button className="cred-btn" onClick={this.handleContinue}>
+              Continue
+            </button>
+            <button className="cred-btn" onClick={this.handleBack}>
+              Back
+            </button>
           </form>
-          <input
-            onChange={e => this.handleChange(e, "username")}
-            value={username}
-            placeholder="username"
-            type="text"
-          />
-          <input
-            onChange={e => this.handleChange(e, "profilePic")}
-            value={profilePic}
-            placeholder="Profile Image URL"
-            type="text"
-          />
-          <input
-            onChange={e => this.handleChange(e, "password")}
-            value={password}
-            placeholder="Password"
-            type="text"
-          />
-          <button onClick={this.handleContinue}>Continue</button>
-          <button onClick={this.handleBack}>Back</button>
         </main>
       </div>
     );
