@@ -84,7 +84,7 @@ export class Register extends Component {
               Continue
             </button>
             <button className="cred-btn" onClick={this.handleBack}>
-              Back
+              Login
             </button>
           </form>
         </main>

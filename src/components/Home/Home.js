@@ -3,6 +3,7 @@ import "./Home.scss";
 import { connect } from "react-redux";
 import axios from "axios";
 import { logoutUser } from "../../ducks/reducer";
+import Cards from "../Cards/Cards";
 
 export class Home extends Component {
   state = {
@@ -34,9 +35,9 @@ export class Home extends Component {
     });
     return (
       <div className="profile-container">
-        <h1>{username}</h1>
+        <h1 className="Home__username">{username}</h1>
         <img src={user_img} alt="" className="profile-img" />
-        <button className="out-btn" onClick={this.handleLogout}>
+        <button className="btn--out" onClick={this.handleLogout}>
           Log Out
         </button>
         <main className="select-topic-main">
@@ -44,10 +45,9 @@ export class Home extends Component {
             {allTopics}
           </select>
         </main>
-        {/* create deck of cards using react-spring, each card displaying a topic
-                if swipe right it opens the topic, then the topic component will render based on
-                which card is swiped right topic_id. Then a grid of cards where the question is displayed
-                and the answer will be shown on click with a modal or sweetalert2 */}
+        <section className="Home__cards--container">
+          <Cards />
+        </section>
       </div>
     );
   }
