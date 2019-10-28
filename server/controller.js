@@ -70,5 +70,15 @@ module.exports = {
     } catch (err) {
       res.status(500).send({ message: "Couldn't get topics" });
     }
+  },
+  getQuestions: async (req, res) => {
+    try {
+      const db = req.app.get("db");
+      const { topicId } = req.params;
+      const questions = await db.get_questions([topicId]);
+      res.status(200).send(questions);
+    } catch (err) {
+      res.status(500).send({ message: "Couldn't get questions" });
+    }
   }
 };
