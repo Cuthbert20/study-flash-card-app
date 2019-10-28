@@ -7,7 +7,8 @@ import Cards from "../Cards/Cards";
 
 export class Home extends Component {
   state = {
-    topics: []
+    topics: [],
+    topic: null
   };
   componentDidMount() {
     this.allTopics();
@@ -23,12 +24,19 @@ export class Home extends Component {
       topics: result.data
     });
   };
+  handleSelect = res => {
+    this.setState({
+      topic: res.target.value
+    });
+  };
+  handleClick = elm => {};
   render() {
     const { user_id, user_img, username } = this.props;
     const { topics } = this.state;
+    console.log(this.state.topic);
     let allTopics = topics.map((elm, index) => {
       return (
-        <option key={elm.topic_id} value={elm.topic_name}>
+        <option key={elm.topic_id} value={elm.topic_id}>
           {elm.topic_name}
         </option>
       );
@@ -41,12 +49,18 @@ export class Home extends Component {
           Log Out
         </button>
         <main className="select-topic-main">
-          <select name="topics" id="">
+          <select
+            name="topics"
+            value={this.state.topic}
+            onChange={e => this.handleSelect(e)}
+          >
+            <option value="">Select Topic</option>
             {allTopics}
           </select>
         </main>
+        <button className="btn--topic">Load Study Cards</button>
         <section className="Home__cards--container">
-          <Cards />
+          <Cards topicId={this.state.topic} />
         </section>
       </div>
     );

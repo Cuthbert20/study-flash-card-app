@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Cards.scss";
 
-function Cards() {
+function Cards(props) {
+  const [card, setCard] = useState([]);
+  console.log(props);
   return (
     <div>
       <h1>Cards Component</h1>
