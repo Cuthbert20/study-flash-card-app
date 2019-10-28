@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Cards.scss";
+import axios from "axios";
 
 function Cards(props) {
   console.log(props);
+  const [questions, setQuestions] = useState([]);
+  const { topicId } = props;
+  const getQuestions = () => {
+    if (topicId !== "") {
+      axios.get(`/api/question/${topicId}`).then(res => {
+        console.log(res.data);
+      });
+    }
+  };
+  useEffect(() => {
+    getQuestions();
+  });
+  //  define and invoke in useEffect getQuestions();
   let styles = { width: "18rem" };
   return (
     <div>

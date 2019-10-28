@@ -8,7 +8,7 @@ import Cards from "../Cards/Cards";
 export class Home extends Component {
   state = {
     topics: [],
-    topic: null
+    topic: ""
   };
   componentDidMount() {
     this.allTopics();
