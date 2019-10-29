@@ -9,15 +9,16 @@ function Cards(props) {
   const getQuestions = () => {
     if (topicId !== "") {
       axios.get(`/api/question/${topicId}`).then(res => {
-        console.log(res.data);
+        setQuestions(res.data);
       });
     }
   };
   useEffect(() => {
     getQuestions();
-  });
+  }, []);
   //  define and invoke in useEffect getQuestions();
   let styles = { width: "18rem" };
+  console.log(questions);
   return (
     <div>
       <h1>Cards Component</h1>

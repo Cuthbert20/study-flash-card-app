@@ -80,5 +80,15 @@ module.exports = {
     } catch (err) {
       res.status(500).send({ message: "Couldn't get questions" });
     }
+  },
+  getTopic: async (req, res) => {
+    try {
+      const db = req.app.get("db");
+      const { topicId } = req.params;
+      const topic = await db.get_topic_name([topicId]);
+      res.status(200).send(topic);
+    } catch (err) {
+      res.status(500).send({ message: "could get topic name" });
+    }
   }
 };
