@@ -26,6 +26,7 @@ app.post("/auth/logout", ctrl.logout);
 app.get("/auth/session", ctrl.getSession);
 app.get("/api/card/topics", ctrl.getTopics);
 app.get("/api/question/:topicId", ctrl.getQuestions);
+app.get("/api/card/topics/:topicId", ctrl.getTopic);
 
 massive(CONNECTION_STRING).then(db => {
   app.set("db", db);

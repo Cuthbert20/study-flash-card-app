@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Cards.scss";
 import axios from "axios";
 
 function Cards(props) {
   console.log(props);
-  const [questions, setQuestions] = useState([]);
   const { topicId } = props;
-  const getQuestions = () => {
-    if (topicId !== "") {
-      axios.get(`/api/question/${topicId}`).then(res => {
-        setQuestions(res.data);
-      });
-    }
-  };
-  useEffect(() => {
-    getQuestions();
-  }, []);
+
+  //going to move getQuestions method to home component and then pass it to cards
+  //   const getQuestions = () => {
+  //     axios.get(`/api/question/${topicId}`).then(res => {
+  //       console.log(res.data);
+  //     });
+  //   };
+
   //  define and invoke in useEffect getQuestions();
   let styles = { width: "18rem" };
-  console.log(questions);
+  console.log(topicId);
   return (
     <div>
       <h1>Cards Component</h1>

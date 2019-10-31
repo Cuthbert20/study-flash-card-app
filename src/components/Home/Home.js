@@ -8,7 +8,8 @@ import Cards from "../Cards/Cards";
 export class Home extends Component {
   state = {
     topics: [],
-    topic: ""
+    topic: "",
+    topicName: ""
   };
   componentDidMount() {
     this.allTopics();
@@ -29,9 +30,13 @@ export class Home extends Component {
       topic: res.target.value
     });
   };
-  handleClick = elm => {};
+  //getting topicName to pass it to Card Component
+  handleClick = async () => {
+    const result = await axios.get(`/api/card/topics/${this.state.topic}`);
+    console.log(result.data[0].topic_name);
+  };
   render() {
-    const { user_id, user_img, username } = this.props;
+    const { user_img, username } = this.props;
     const { topics } = this.state;
     console.log(this.state.topic);
     let allTopics = topics.map((elm, index) => {
@@ -58,7 +63,9 @@ export class Home extends Component {
             {allTopics}
           </select>
         </main>
-        <button className="btn--topic">Load Study Cards</button>
+        <button onClick={this.handleClick} className="btn--topic">
+          Load Study Cards
+        </button>
         <section className="Home__cards--container">
           <Cards topicId={this.state.topic} />
         </section>
